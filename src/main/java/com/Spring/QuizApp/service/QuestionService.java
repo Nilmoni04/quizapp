@@ -13,4 +13,28 @@ public class QuestionService {
     public List<Question> getAllQuestions() {
         return repo.findAll();
     }
+
+    public List<Question> getQuestionsByCategory(String category) {
+        return repo.findByCategory(category);
+    }
+
+    public String addQuestion(Question question) {
+        repo.save(question);
+        return "Saved!!";
+    }
+
+    public String deleteQuestion(int id) {
+        repo.deleteById(id);
+        return "Deleted..";
+    }
+
+    public String updateQuestion(int id, Question updatedQuestion) {
+        if (repo.existsById(id)) {
+            updatedQuestion.setId(id); // Ensure ID remains the same
+            repo.save(updatedQuestion);
+            return "Updated Successfully!";
+        } else {
+            return "Question with ID " + id + " not found!";
+        }
+    }
 }
