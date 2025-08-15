@@ -3,7 +3,6 @@ package com.Spring.QuizApp.controller;
 import com.Spring.QuizApp.model.Question;
 import com.Spring.QuizApp.service.QuestionService;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
